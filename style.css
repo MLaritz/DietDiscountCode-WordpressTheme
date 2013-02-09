@@ -1,0 +1,905 @@
+/*
+Theme Name: DietDiscountCode
+Theme URI: http://dietdiscountcode.com
+Description: Diet Discount Code WordPress Theme
+Version: 1.0.0
+Author: Martin Laritz (@MLaritz)
+Author URI: http://www.deskcoder.com
+
+License: MIT
+License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+/* =============================================================================
+   General Styles
+   ========================================================================== */
+
+@font-face {
+    font-family: 'MartinLaritz';
+    src: url('fonts/MartinLaritz.eot');
+    src: url('fonts/MartinLaritz.eot?#iefix') format('embedded-opentype'), url('fonts/MartinLaritz.svg#MartinLaritz') format('svg'), url('fonts/MartinLaritz.woff') format('woff'), url('fonts/MartinLaritz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** * html5doctor.com Reset Stylesheet v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) * Richard Clark (http://richclarkdesign.com) * http://cssreset.com */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+/* Global Box Sizing and Font-Smoothing */
+*, *:after, *:before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    color: #333; /* Lighter on the eyes than #000 Black */
+}
+
+a {
+    color: #186118;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #228B22;
+}
+
+/* =============================================================================
+   Structure
+   ========================================================================== */
+
+/* Fluid First approach - http://www.toddmotto.com/fluid-first-creating-a-future-proof-fluid-and-responsive-website 
+  Responsive, fluid, 1280px width - perfect start.
+*/
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header h1 {
+    padding: 15px 5px;
+}
+
+h1.title {
+    font-size: 2em;
+    margin: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #228B22;
+    font-family: 'Asap', 'Open Sans', sans-serif;
+}
+
+h1 a {
+    line-height: 1;
+    display: block;
+}
+
+h1 img {
+    width: 250px;
+    height: auto;
+}
+
+section {
+    margin: 0 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+aside {
+    display: none;
+}
+
+#sidebar {
+    float: right;
+    width: 32%;
+}
+
+.headerBreak {
+    height: 10px;
+    background: #228B22;
+    clear: both;
+}
+
+article {
+    border: 2px dashed #228B22;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    text-shadow: 1px 1px #228B22;
+    font-size: 1.7em;
+    text-align: center;
+    margin: 10px 0;
+    font-family: 'Asap', 'Open Sans', sans-serif;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-family: 'Asap', 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+h4 {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#content h2, #content h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    background: #186118;
+    color: #fff;
+    border: 1px solid #228B22;
+    padding: 5px 10px;
+    clear: both;
+    margin: 20px 0;
+    font-family: 'Asap', 'Open Sans', sans-serif;
+}
+
+
+
+#content article h2 {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-shadow: none;
+    font-size: 1.2em;
+    clear: none;
+}
+
+aside {
+    margin: 10px 0;
+}
+
+aside h3 {
+    background: #444;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-left: 20px;
+    padding: 3px 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.thumbnail {
+    float: left;
+    margin-right: 10px;
+}
+
+.close-btn {
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-btn {
+    display: none;
+    padding: 0;
+    border: 0;
+    outline: none;
+    white-space: nowrap;
+    font-size: 1.5em;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 100;
+    color: #228B22;
+    position: absolute;
+    top: 11px;
+    right: 5px;
+}
+
+#nav {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    height: 100%;
+}
+
+#nav .close-btn {
+    display: none;
+}
+
+#nav ul {
+    *zoom: 1;
+    display: block;
+}
+
+#nav ul:before, #nav ul:after {
+    content: "";
+    display: table;
+}
+
+#nav ul:after {
+    clear: both;
+}
+
+#nav li {
+    display: block;
+}
+
+#nav li a {
+    display: block;
+    color: #228B22;
+    font-weight: bold;
+    outline: none;
+}
+
+#nav li a:focus, nav li a:hover {
+    color: #228B22;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#nav li.is-active a {
+    color: #fff;
+}
+
+#nav a, #nav a:hover {
+    color: #fff;
+}
+
+#categoryMenu {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #aaa;
+    margin: 20px 0 0 9px;
+}
+
+.coupon {
+    clear: both;
+    text-align: center;
+}
+
+.coupon a {
+    border: 2px dashed #186118;
+    padding: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #228B22;
+    background: #efe;
+}
+
+#otherDiets {
+    column-count: 2;
+    -webkit-column-count: 2;
+}
+
+#otherDiets li {
+    padding: 5px 0;
+}
+
+#featured {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#featured h2 {
+    text-align: center;
+}
+
+.featuredCoupon {
+    border: 2px dashed #228B22;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: left;
+}
+
+.featuredCoupon .coupon {
+    float: right;
+    margin: 5px 0 0;
+}
+
+#featured h3 {
+    clear: both;
+    text-align: center;
+}
+
+.category-description {
+    margin: 5px 0;
+    clear: both
+}
+
+.category-description p {
+    margin: 10px 0;
+}
+
+.costTable {
+    font-size: .9em;
+    width: 100%;
+}
+
+.costTable th {
+    width: 100px;
+    background: #eee;
+}
+
+.costTable td, .costTable th {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 2px
+}
+
+.programCol {
+    width: auto
+}
+
+#socialIcons {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+#socialIcons a {
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    background: #186118;
+    color: #fff;
+    border: 1px solid #228B22;
+    padding: 5px 10px;
+    clear: both;
+    margin: 20px 0;
+    font-family: 'Asap', 'Open Sans', sans-serif;
+}
+
+footer {
+    background: #228B22;
+    color: #fff;
+    padding: 10px;
+    clear: both;
+}
+
+footer a {
+    color: #fff;
+}
+
+.nav-btn {
+    display: block;
+}
+
+#nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 50px;
+    width: 180px;
+}
+
+#nav:not(:target) {
+    z-index: 1;
+    height: 0;
+}
+
+#nav:target {
+    z-index: 200;
+    background: #228B22;
+}
+
+#nav:target .close-btn {
+    display: block;
+}
+
+#nav .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#nav li {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#nav li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#nav li.is-active:after {
+    z-index: 50;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -0.031em;
+    margin-top: -0.625em;
+    border-top: 0.625em transparent solid;
+    border-bottom: 0.625em transparent solid;
+    border-right: 0.625em white solid;
+}
+
+#nav li a {
+    padding: 0.857em 2.143em;
+    font-size: 0.875em;
+    line-height: 1.286em;
+    color: #fff;
+}
+
+.nav-previous {
+    margin: 10px;
+    float: left;
+}
+
+.nav-next {
+    float: right;
+    margin: 10px;
+}
+
+textarea {
+    width: 100%;
+}
+
+label {
+    display: block;
+}
+
+
+@media screen and (min-width: 25em) {
+    .coupon {
+        clear: none;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 45.0625em) {
+
+    #categoryMenu {
+        display: none;
+    }
+
+    header {
+        padding: 0 20px;
+    }
+
+    header h1 {
+        float: left;
+    }
+
+    h1 img {
+        width: 399px;
+        height: auto;
+    }
+
+    #nav {
+        float: right;
+        margin-top: 10px;
+        position: static;
+        width: auto;
+        height: auto;
+        padding-top: 3px;
+    }
+
+    #nav:not(:target) {
+        height: auto;
+    }
+
+    .nav-btn {
+        border: 0;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    #nav .close-btn {
+        border: 0;
+        padding: 0;
+        position: absolute;
+    }
+
+    #nav ul {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    #nav li {
+        display: inline-block;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0 3px;
+    }
+
+    #nav li:last-child {
+        border-right: none;
+    }
+
+    #nav li a {
+        padding: 0.229em 0.457em;
+        text-decoration: none;
+        font-size: 1.1em;
+        border-radius: 10px;
+        border: 2px solid #186118;
+        background: #186118;
+        color: #fff;
+    }
+
+    #nav a, #nav a:hover {
+        color: #228B22;
+        background: #fff;
+    }
+
+    #content {
+        width: 65%;
+        float: left;
+    }
+
+    aside {
+        display: block;
+    }
+
+    #otherDiets {
+        column-count: 4;
+        -webkit-column-count: 4;
+    }
+
+    .featuredCoupon {
+        display:inline-block;
+        width: 450px;
+        margin: 10px 15px;
+    }
+
+    textarea {
+        width: auto;
+    }
+
+
+
+}
+
+/* Retina screens */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+}
+
+.icon-google-plus:before, .icon-twitter:before, .icon-menu:before, .icon-facebook:before, .icon-external-link:before, .icon-feed:before, .icon-cancel:before, .icon-tag:before, .icon-thumbs-up:before, .icon-thumbs-down:before {
+    font-family: 'MartinLaritz';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-google-plus:before {
+    content: "\67";
+}
+
+.icon-twitter:before {
+    content: "\74";
+}
+
+.icon-menu:before {
+    content: "\6d";
+}
+
+.icon-facebook:before {
+    content: "\66";
+}
+
+.icon-external-link:before {
+    content: "\65";
+}
+
+.icon-feed:before {
+    content: "\72";
+}
+
+.icon-cancel:before {
+    content: "\63";
+}
+
+.icon-tag:before {
+    content: "\77";
+}
+
+.icon-thumbs-up:before {
+    content: "\75";
+}
+
+.icon-thumbs-down:before {
+    content: "\64";
+}
+
+/* =============================================================================
+   Non-Semantic Classes
+   ========================================================================== */
+
+/* Custom Selection Styles */
+::selection {
+    background: #228B22;
+    color: #FFF;
+    text-shadow: none;
+}
+
+::-webkit-selection {
+    background: #228B22;
+    color: #FFF;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: #228B22;
+    color: #FFF;
+    text-shadow: none;
+}
+
+/* Input focus styles */
+input:focus {
+    outline: 0;
+    border: 1px solid #0091BD;
+}
+
+/* Gets rid of blue glow on field focus, adds border color instead */
+
+/* =============================================================================
+   WordPress Core CSS Styles
+   ========================================================================== */
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter, div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #FFF;
+    border: 1px solid #F0F0F0;
+    max-width: 96%;
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text, .gallery-caption {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+.sticky {
+}
+
+.bypostauthor {
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a, a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+        content: "";
+    }
+
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr, img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
